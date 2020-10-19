@@ -223,7 +223,7 @@ if __name__ == "__main__":
   #   print('Fault library filename is missing, pass the filename as argument')
 
 
-  for patient_id in range(1):
+  for patient_id in range(10):
     for Initial_Bg in range(80,210,20):
       Rigister_patient(patient_id,Initial_Bg)
       #RL controller
@@ -264,7 +264,7 @@ if __name__ == "__main__":
         patient_name =str(Patient_list[patient_id])
         dir_source = './simulation_data'
         if os.path.isdir(dir_source) == True:
-          dir_dest = './simulationCollection_faultfree1/'+ patient_name
+          dir_dest = './simulationCollection_faultfree/'+ patient_name
           if os.path.isdir(dir_dest) != True:
             os.makedirs(dir_dest)
           cmd = 'mv -f {}/{} '.format(dir_source,str(patient_name+'.csv')) + ' ' + dir_dest+'/{}_{}.csv'.format(patient_name,Initial_Bg)
